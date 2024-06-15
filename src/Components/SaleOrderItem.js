@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react';
 
 export default function SaleOrderItem({ saleOrder, saleOrderList }) {
-  console.log("saleorderkist", saleOrderList)
   return (
     <div>
       <TableContainer>

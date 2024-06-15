@@ -9,7 +9,6 @@ export default function Login() {
         e.preventDefault();
         if (username === 'admin' && password === 'admin') {
             localStorage.setItem('authenticated', 'true');
-            console.log("Loggged In")
             navigate('/')
           } else {
             alert('Invalid credentials');

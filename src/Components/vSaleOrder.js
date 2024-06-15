@@ -15,7 +15,6 @@ const SaleOrderView = () => {
           throw new Error('Failed to fetch sale order');
         }
         const data = await response.json();
-        console.log(data);
         setSaleOrder(data.saleOrder); // Accessing nested saleOrder
       } catch (error) {
         console.error('Error fetching sale order:', error);

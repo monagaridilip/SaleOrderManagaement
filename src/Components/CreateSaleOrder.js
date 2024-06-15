@@ -9,7 +9,6 @@ const CreateSaleOrder = () => {
   const customers = useSelector(selectCustomers);
   const products = useSelector(selectProducts);
   const skuItems = useSelector(selectSkuItems);
-  console.log("skuItems",skuItems)
   const [formData, setFormData] = useState({
     customer_id: '',
     items: [{ product_id: '', skus: [{ sku_id: '', price: '', quantity: '' }] }],
@@ -70,7 +69,7 @@ const CreateSaleOrder = () => {
         })),
       })),
     };
-    console.log("FormattedData",formattedFormData)
+    
     try {
       const res = await fetch('http://localhost:5000/api/cSaleorders', {
         method: 'POST',
@@ -88,7 +87,6 @@ const CreateSaleOrder = () => {
       if(data){
         navigate(`/vSaleOrder/${data._id}`)
       }
-      // console.log('Response from server:', data);
     } catch (error) {
       console.error('Error submitting sale order:', error);
     }

@@ -89,7 +89,7 @@ export default function EditSaleOrder() {
         if(data){
           navigate(`/vSaleOrder/${data._id}`)
         }
-        // console.log('Response from server:', data);
+        
       } catch (error) {
         console.error('Error submitting sale order:', error);
       }
@@ -108,16 +108,7 @@ export default function EditSaleOrder() {
       return <div>Error: formData or handleChange is not correctly passed</div>;
     }
   
-    const fetch = async( ) =>{
-      try {
-        const response = await fetch(`http://localhost:5000/api/vsaleorders/${params.id}`)
-        const data = await response.json();
-        setFetchData(data)
-        console.log(fetchData)
-      } catch (error) {
-        console.error('Error fetching the SaleOrder', error);
-      }
-    }
+    
     
     return (
       <div className="container mt-5">
