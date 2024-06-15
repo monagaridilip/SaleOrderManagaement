@@ -10,7 +10,6 @@ export default function EditSaleOrder() {
     const products = useSelector(selectProducts);
     const skuItems = useSelector(selectSkuItems);
     const params = useParams()
-    const [fetchData,setFetchData] = useState();
     const [formData, setFormData] = useState({
       customer_id: '',
       items: [{ product_id: '', skus: [{ sku_id: '', price: '', quantity: '' }] }],

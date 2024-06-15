@@ -7,7 +7,7 @@ export default function Login() {
     const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if (username === 'admin' && password === 'admin') {
+        if (username !== '' && password !== '') {
             localStorage.setItem('authenticated', 'true');
             navigate('/')
           } else {
@@ -21,12 +21,12 @@ export default function Login() {
         <div className="col-md-6">
             <form className="p-4 border rounded">
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">UserName</label>
-                    <input type="text" className="form-control" value={username} onChange={(e)=>setUserName(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='username'/>
+                    <label for="exampleInputEmail1" className="form-label">Username</label>
+                    <input type="text" className="form-control" value={username} onChange={(e)=>setUserName(e.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='username' />
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputPassword1" className="form-label">Password</label>
-                    <input type="password" className="form-control" value={password} onChange={(e)=>setPassword(e.target.value)} id="exampleInputPassword1" placeholder='password'/>
+                    <input type="password" className="form-control" value={password} onChange={(e)=>setPassword(e.target.value)} id="exampleInputPassword1" placeholder='password' />
                 </div>
                 <button type="submit" className="btn btn-success w-100" onClick={handleSubmit}>Submit</button>
             </form>
